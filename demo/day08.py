@@ -87,10 +87,10 @@ def cunkuan():
         mima = input("请输入您的帐号密码：")
         if mima == names.get(account).get("password"):
             jine = input("请输入您要存款的金额：")
-            s = int(names.get(account).get("money"))
+            names[account]["money"] = int(names.get(account).get("money"))
             jine = int(jine)
-            s = s + jine
-            print("存款操作成功,您当前的余额为：",s,"￥")
+            names[account]["money"] = names[account]["money"] + jine
+            print("存款操作成功,您当前的余额为：",names[account]["money"],"￥")
         else:
             print("输入密码错误！请重新输入！")
     else:
